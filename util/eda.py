@@ -191,6 +191,8 @@ def convert_to_dummy(df):
 
     print(df.info())
     print(df.head())
+    # Convert final df to csv for model
+    df.to_csv('data/Application_Data_Final.csv', index=False)
 
 if __name__ == "__main__":
     print_dataset_info()
