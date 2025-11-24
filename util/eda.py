@@ -178,13 +178,13 @@ def convert_to_dummy(df):
     df['Applicant_Gender'] = df['Applicant_Gender'].replace({'M': 0, 'F': 1})
     df['Applicant_Gender'] = df['Applicant_Gender'].astype(int)
     # Convert Employment_Status into dummy vars
-    Employment_Status = pd.get_dummies(df['Employment_Status'], drop_first=False)
+    Employment_Status = pd.get_dummies(df['Employment_Status'], drop_first=False, dtype=int)
     # Convert Family_Status into dummy vars
-    Family_Status = pd.get_dummies(df['Family_Status'], drop_first=False)
+    Family_Status = pd.get_dummies(df['Family_Status'], drop_first=False, dtype=int)
     # Convert Education_Completed into dummy vars
-    Education_Completed = pd.get_dummies(df['Education_Completed'], drop_first=False)
+    Education_Completed = pd.get_dummies(df['Education_Completed'], drop_first=False, dtype=int)
     # Convert Housing_Type into dummy vars
-    Housing_Type = pd.get_dummies(df['Housing_Type'], drop_first=False)
+    Housing_Type = pd.get_dummies(df['Housing_Type'], drop_first=False, dtype=int)
 
     df.drop(['Employment_Status', 'Family_Status', 'Education_Completed', 'Housing_Type'], axis=1, inplace=True)
     df = pd.concat([df, Employment_Status, Family_Status, Education_Completed, Housing_Type], axis=1)
