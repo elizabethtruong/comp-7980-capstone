@@ -1,0 +1,17 @@
+body {
+  background-color: #4267b2;
+}
+
+input,
+label {
+  margin: 0.2rem 0;
+}
+
+input[type="number"] {
+  width: 250px;
+  height: 40px;
+}
+
+div {
+  margin: auto;
+}
