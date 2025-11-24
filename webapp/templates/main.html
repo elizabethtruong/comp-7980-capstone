@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <link href="https://unpkg.com/tailwindcss@1.9.6/dist/tailwind.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../static/main.css" />
+        <link rel="stylesheet" href="{{ url_for('static',filename='main.css') }}" />
         <title>Credit Card Approval Prediction</title>
     </head>
 
@@ -15,7 +15,7 @@
         <hr />
         <br />
 
-        <form id="review-form" action="{{ url_for('main') }}" method="POST">
+        <form id="approval-form" action="{{ url_for('main') }}" method="POST">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
             Select your gender:
           </label>
@@ -44,7 +44,7 @@
         
         <br />
 
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="employment_status">
             What is your employment status?
           </label>
         <select
@@ -54,16 +54,16 @@
             required
           >
             <option></option>
-            <option value="Salaried employee">Salaried employee</option>
-            <option value="Hourly/commission employee">Hourly/commission employee</option>
             <option value="Government employee">Government employee</option>
-            <option value="Student">Student</option>
+            <option value="Hourly/commission employee">Hourly/commission employee</option>
             <option value="Pensioner">Pensioner</option>
+            <option value="Salaried employee">Salaried employee</option>
+            <option value="Student">Student</option>
           </select>
 
           <br />
 
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="total_income">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="total_worked">
             Enter the total years you have worked: 
         </label>
         
@@ -81,11 +81,11 @@
             required
           >
             <option></option>
-            <option value="Some high school">Some high school</option>
+            <option value="Bachelor's degree">Bachelor's degree</option>
             <option value="High school">High school</option>
+            <option value="Master's degree or higher">Master's degree or higher</option>
             <option value="Some college">Some college</option>
-            <option value="Bachelors">Bachelors</option>
-            <option value="Masters or higher">Masters or higher</option>
+            <option value="Some high school">Some high school</option>
           </select>
 
           <br />
@@ -100,9 +100,9 @@
             required
           >
             <option></option>
-            <option value="Single">Single</option>
             <option value="Married">Married</option>
             <option value="Separated">Separated</option>
+            <option value="Single">Single</option>
             <option value="Widow">Widow</option>
           </select>
 
@@ -119,14 +119,14 @@
           >
             <option></option>
             <option value="Homeowner">Homeowner</option>
-            <option value="Renting">Renting</option>
             <option value="Public housing">Public housing</option>
-            <option value="Live with parents">Live with parents</option>
+            <option value="Renting">Renting</option>
+            <option value="With parents">With parents</option>
           </select>
 
           <br />
 
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="own_car">
             Do you own a car?
           </label>
 
@@ -138,7 +138,7 @@
           
         <br />
 
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="gender">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="own_realty">
             Do you own any properties?
           </label>
 
@@ -157,11 +157,17 @@
           />
         </form>
 
+        <div class="result mt-12" align="center">
+          <p class="text-blue-700 text-lg font-bold border rounded mt-4">
+            {{ result }}
+          </p>
+        </div>
+
       </div>
     </div>
 
     <script
-      src="../static/main.js"
+      src="{{ url_for('static',filename='main.js') }}"
       type="text/javascript"
     ></script>
   </body>
