@@ -5,7 +5,7 @@ This script does the following:
 3) Builds several machine learning models
 4) Evaluates and performs predictions on the models to find the one with best performance
 
-Usage: python util/model.py
+Usage: python webapp/model/model.py
 '''
 
 from sklearn.model_selection import train_test_split
@@ -77,17 +77,9 @@ dt_model.fit(X_balance, Y_balance.values.ravel())
 print(display_results(dt_model, X_balance, X_test, Y_balance, y_test, training=True))
 print(display_results(dt_model, X_balance, X_test, Y_balance, y_test, training=False))
 
-# # RANDOM FOREST
+# RANDOM FOREST
 rf_model = RandomForestClassifier()
 rf_model.fit(X_balance, Y_balance.values.ravel())
 
 print(display_results(rf_model, X_balance, X_test, Y_balance, y_test, training=True))
 print(display_results(rf_model, X_balance, X_test, Y_balance, y_test, training=False))
-
-# # Male, 1, 1, 31111, 32, 5, True, False, False, False
-# # Applicant_Gender,Owned_Car,Owned_Realty,Total_Income,Income_Type,Education_Type,Family_Status,Housing_Type,Job_Title,Applicant_Age,Years_of_Working,Total_Bad_Debt,Total_Good_Debt,Status
-# #F,0,1,126000,Commercial associate,Higher education,Single / not married,House / apartment,Sales staff,52,7,9,5,0
-# # inputs = np.array([[0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
-# # # inputs = np.array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]])
-# # pred = lr_model.predict(inputs)
-# # print(pred)
