@@ -17,6 +17,7 @@ from sklearn.metrics import accuracy_score, classification_report
 from imblearn.over_sampling import SMOTE
 import pandas as pd
 import numpy as np
+import pickle
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning) 
 
@@ -83,3 +84,7 @@ rf_model.fit(X_balance, Y_balance.values.ravel())
 
 print(display_results(rf_model, X_balance, X_test, Y_balance, y_test, training=True))
 print(display_results(rf_model, X_balance, X_test, Y_balance, y_test, training=False))
+
+# Serialize model
+model_filename = 'webapp/model/credit_approval_model.pkl'
+pickle.dump(rf_model, open(model_filename, 'wb'))
