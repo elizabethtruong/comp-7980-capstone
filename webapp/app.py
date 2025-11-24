@@ -1,6 +1,5 @@
 import flask
 import pickle
-import pandas as pd
 import numpy as np
 
 # Use pickle to load in the trained model
