@@ -1,7 +1,7 @@
 '''
 This script performs exploratory data analysis on the dataset.
 
-Usage: python webapp/model/eda.py
+Usage: python util/eda.py
 '''
 
 import pandas as pd
