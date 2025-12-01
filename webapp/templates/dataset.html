@@ -8,13 +8,13 @@
 <body class="font-mono">
     <div class="mt-3 mb-1 flex items-center justify-center h-screen">
         <div class="p-12 max-w-6xl bg-white rounded-lg overflow-hidden shadow-lg">
-            <div class="font-bold text-2xl mb-2">
-            Dataset Information
+            <div>
+            <h1 class="font-bold text-2xl mb-2">Dataset Information</h1>
             </div>
             <hr />
             <br />
 
-            <b class="text-xl">Origin</b>
+            <h2 class="font-bold text-xl">Origin</h2>
             <br />
             The dataset used to train the machine learning model can be found <a href="https://www.kaggle.com/datasets/caesarmario/application-data/data" class="text-fg-brand underline hover:no-underline">here</a>. 
             This particular dataset is a cleaned, merged, and transformed version of <a href="https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction" class="text-fg-brand underline hover:no-underline">this dataset</a>.
@@ -22,7 +22,7 @@
             <br />
             <br />
 
-            <b class="text-xl">Contents</b>
+            <h2 class="font-bold text-xl">Contents</h2>
             <br />
             The dataset contains 25,128 observations, 20 features, and 1 target in total. The target variable is <b>Status</b> and represents whether the applicant is approved or denied for credit.
             After data preprocessing and feature engineering detailed on the <a href="/eda/" class="text-fg-brand underline hover:no-underline">EDA page</a>, the number of features were reduced to 10 which are the ones present on the prediction form.
@@ -30,7 +30,7 @@
             <br />
             <br />
 
-            <b class="text-xl">Reflection</b>
+            <h2 class="font-bold text-xl">Reflection</h2>
             <br />
             A downside to using this dataset was that it did not provide data for credit score or total assets. Such information would have been valuable in model training and would have helped in more closely resembling a credit card application in the real world.
             However, I could not find an adequate dataset with these features. Otherwise, I thought this dataset provided a good challenge during data evaluation and model training.
