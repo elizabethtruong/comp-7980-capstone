@@ -1,7 +1,6 @@
 import flask
 import pickle
 import numpy as np
-import pandas as pd
 
 # Use pickle to load in the trained model
 with open('webapp/model/credit_approval_model.pkl', 'rb') as f:
@@ -73,11 +72,7 @@ def main():
         inputs_list = basic_inputs_list + dummy_inputs_list
         to_np_arr = np.array(inputs_list)
         predict_inputs = to_np_arr.reshape(1,-1)
-        predict_df = pd.DataFrame(predict_inputs, columns = ["Applicant_Gender", "Owned_Car", "Owned_Realty", "Total_Income", "Applicant_Age", "Years_of_Working",
-                                                             "Government employee", "Hourly/commission employee", "Pensioner", "Salaried employee", "Student",
-                                                             "Married", "Separated", "Single", "Widow", "Bachelor's degree", "High school", "Master's degree or higher", "Some college", "Some high school",
-                                                             "Homeowner", "Public housing", "Renting", "With parents"])
-        prediction = model.predict(predict_df)
+        prediction = model.predict(predict_inputs)
         
         # Convert prediction to text
         if prediction == 0:
