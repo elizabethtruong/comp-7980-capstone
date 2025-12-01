@@ -67,21 +67,21 @@ print(display_results(lr_model, X_balance, X_test, Y_balance, y_test, training=F
 # K-NEAREST NEIGHBORS
 knn_model = KNeighborsClassifier()
 knn_model.fit(X_balance, Y_balance.values.ravel())
-
+print("Results for K-Nearest Neighbors:\n")
 print(display_results(knn_model, X_balance, X_test, Y_balance, y_test, training=True))
 print(display_results(knn_model, X_balance, X_test, Y_balance, y_test, training=False))
 
 # DECISION TREE
 dt_model = DecisionTreeClassifier()
 dt_model.fit(X_balance, Y_balance.values.ravel())
-
+print("Results for Decision Tree:\n")
 print(display_results(dt_model, X_balance, X_test, Y_balance, y_test, training=True))
 print(display_results(dt_model, X_balance, X_test, Y_balance, y_test, training=False))
 
 # RANDOM FOREST
 rf_model = RandomForestClassifier()
 rf_model.fit(X_balance, Y_balance.values.ravel())
-
+print("Results for Random Forest:\n")
 print(display_results(rf_model, X_balance, X_test, Y_balance, y_test, training=True))
 print(display_results(rf_model, X_balance, X_test, Y_balance, y_test, training=False))
 
