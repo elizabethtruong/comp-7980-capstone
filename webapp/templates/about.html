@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+    <title>About the Project</title>
+</head>
+
+<body class="font-mono">
+    <div class="mt-auto mb-auto flex items-center justify-center h-screen">
+        <div class="p-12 max-w-6xl bg-white rounded-lg overflow-hidden shadow-lg">
+            <div class="font-bold text-2xl mb-2">
+            About the Project
+            </div>
+            <hr />
+            <br />
+
+            <b class="text-xl">Background</b>
+            <br />
+            This Credit Card Approval Prediction web application is a capstone project developed for COMP 7980.
+            It aims to apply the following:
+            <br />
+            <br />
+            <ul class="list-disc list-inside">
+                <li>Concepts learned from my computer science and statistics classes as a data engineering student</li>
+                <li>Personal interest in web development and web accessibility</li>
+                <li>Career experience in DevOps</li>
+            </ul>
+
+            <br />
+            <b class="text-xl">Objective</b>
+            <br />
+            This project aims to simulate a credit card approval system. A machine learning model has been trained on an existing dataset, 
+            and the trained model has been serialized to serve as the web application's backend. Based on the user's inputs with the form 
+            on the frontend, the model will then determine whether the user is likely to be approved for a credit card.
+            <br />
+
+            <br />
+            <b class="text-xl">Dataset and Model</b>
+            <br />
+            The dataset used to train the machine learning model can be found <a href="https://www.kaggle.com/datasets/caesarmario/application-data/data" class="text-fg-brand underline hover:no-underline">here</a>. 
+            More information about how the dataset was obtained can be found on the <a href="/dataset/" class="text-fg-brand underline hover:no-underline">Dataset page</a>
+            and how the dataset was engineered for model training can be found on the <a href="/eda/" class="text-fg-brand underline hover:no-underline">EDA page</a>.
+            The process of training the machine learning model is documented on the <a href="/model/" class="text-fg-brand underline hover:no-underline"> ML Model page</a>.
+            <br />
+
+            <br />
+            <b class="text-xl">Technologies Used</b>
+            <br />
+            <ul class="list-disc list-inside">
+                <li>Frontend: HTML, CSS, JavaScript</li>
+                <li>Backend: Python, Flask</li>
+                <li>Other Tools: Vercel, VS Code, Git</li>
+            </ul>
+
+        </div>
+    </div>
+</body>
+{% endblock %}

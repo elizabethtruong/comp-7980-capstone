@@ -8,6 +8,22 @@ with open('webapp/model/credit_approval_model.pkl', 'rb') as f:
 
 app = flask.Flask(__name__, template_folder='templates')
 
+@app.route('/about/')
+def about():
+    return(flask.render_template('about.html'))
+
+@app.route('/dataset/')
+def dataset():
+    return(flask.render_template('dataset.html'))
+
+@app.route('/eda/')
+def eda():
+    return(flask.render_template('eda.html'))
+
+@app.route('/model/')
+def ml_model():
+    return(flask.render_template('model.html'))
+
 @app.route('/', methods=['GET', 'POST'])
 def main():
     if flask.request.method == 'GET':
@@ -79,7 +95,7 @@ def main():
             prediction_str = "Not Approved"
         elif prediction == 1:
             prediction_str = "Approved"
-        return(flask.render_template('main.html', result=prediction_str))
+        return(flask.render_template('results.html', result=prediction_str))
 
 if __name__ == '__main__':
     app.run(port=1234,debug=True)
