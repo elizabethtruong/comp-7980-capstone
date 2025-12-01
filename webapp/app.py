@@ -34,11 +34,11 @@ def main():
         gender = flask.request.form.get('gender')
         own_car = flask.request.form.get('own_car')
         own_realty = flask.request.form.get('own_realty')
-        income = flask.request.form.get('income')
+        total_income = flask.request.form.get('total_income')
         age = flask.request.form.get('age')
         total_worked = flask.request.form.get('total_worked')
 
-        basic_inputs_list = [gender, own_car, own_realty, income, age, total_worked]
+        basic_inputs_list = [gender, own_car, own_realty, total_income, age, total_worked]
 
         employment_status = flask.request.form.get('employment_status')
         education = flask.request.form.get('education')
