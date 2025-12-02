@@ -12,6 +12,10 @@ app = flask.Flask(__name__, template_folder='templates')
 def about():
     return(flask.render_template('about.html'))
 
+@app.route('/accessibility/')
+def accessibility():
+    return(flask.render_template('accessibility.html'))
+
 @app.route('/dataset/')
 def dataset():
     return(flask.render_template('dataset.html'))
